@@ -27,12 +27,4 @@ class UserTest < ActiveSupport::TestCase
 	#	assert !user.errors[:nombre_perfil].empty?
 	#end
 
-	test "un usuario deberia tener un nombre de perfil con formato" do
-		user = User.new
-		user.nombre_perfil = "Mi nombre con espacios"
-		assert !user.save
-		assert !user.errors[:nombre_perfil].empty?
-		assert user.errors[:nombre_perfil].include?("Debe tener un formato correcto")
-	end
-
 end

@@ -11,11 +11,7 @@ class User < ActiveRecord::Base
 
 	validates :primer_nombre, presence: true
 	validates :primer_apellido, presence: true
-	validates :nombre_perfil, presence: true, uniqueness: true,
-											format: {
-												with: /a-zA-Z0-9_-./,
-												message: "Debe tener un formato correcto"
-											}
+	validates :nombre_perfil, presence: true, uniqueness: true
 
 	def nombre_completo
 		primer_nombre + " " + primer_apellido
