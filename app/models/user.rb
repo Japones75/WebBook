@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 					:email, :password, :password_confirmation
 
 	has_many :statuses
+	has_many :User_admistads
+	has_many :amigos, through: :user_admistads
 
 	validates :primer_nombre, presence: true
 	validates :primer_apellido, presence: true
