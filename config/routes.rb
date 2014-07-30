@@ -1,4 +1,5 @@
 DawBook::Application.routes.draw do
+  get "perfil/show"
   devise_for :users
 
   devise_scope  :user do
@@ -12,6 +13,8 @@ DawBook::Application.routes.draw do
   get 'timeline', to: 'statuses#index', as: :timeline
 
   root to: 'statuses#index'
+
+  get '/id', to: 'perfil#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
